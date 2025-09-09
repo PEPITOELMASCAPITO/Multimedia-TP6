@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Pokémon Quiz</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <form>
+    <h1>Quiz Pokémon</h1>
+
+    <!-- Nombre Entrenador -->
+    <div class="campo">
+      <label for="nombre">Nombre del Entrenador</label>
+      <input type="text" id="nombre" name="nombre" placeholder="Ash Ketchum" required>
+    </div>
+
+    <!-- Pregunta 1 -->
+    <h3>1. ¿Cuál es tu Pokémon inicial favorito?</h3>
+    <div class="campo">
+      <div class="opcion"><input type="radio" id="bulbasaur1" name="starter" value="Bulbasaur"><label for="bulbasaur1">Bulbasaur 🌱</label></div>
+      <div class="opcion"><input type="radio" id="charmander1" name="starter" value="Charmander"><label for="charmander1">Charmander 🔥</label></div>
+      <div class="opcion"><input type="radio" id="squirtle1" name="starter" value="Squirtle"><label for="squirtle1">Squirtle 💧</label></div>
+      <div class="opcion"><input type="radio" id="pikachu1" name="starter" value="Pikachu"><label for="pikachu1">Pikachu ⚡</label></div>
+    </div>
+    <div class="pokemon-imagen" id="img-starter"></div>
+
+    <!-- Pregunta 2 -->
+    <h3>2. ¿Cuál es tu tipo de Pokémon favorito?</h3>
+    <div class="campo">
+      <div class="opcion"><input type="radio" id="fuego1" name="tipo" value="Fuego"><label for="fuego1">Fuego 🔥</label></div>
+      <div class="opcion"><input type="radio" id="agua1" name="tipo" value="Agua"><label for="agua1">Agua 💧</label></div>
+      <div class="opcion"><input type="radio" id="planta1" name="tipo" value="Planta"><label for="planta1">Planta 🌿</label></div>
+      <div class="opcion"><input type="radio" id="electrico1" name="tipo" value="Electrico"><label for="electrico1">Eléctrico ⚡</label></div>
+    </div>
+    <div class="pokemon-imagen" id="img-tipo"></div>
+
+    <!-- Pregunta 3 -->
+    <h3>3. ¿Qué gimnasio Pokémon te gustaría desafiar primero?</h3>
+    <div class="campo">
+      <div class="opcion"><input type="radio" id="gimnasioRoca1" name="gimnasio" value="Roca"><label for="gimnasioRoca1">Gimnasio de Roca 🪨</label></div>
+      <div class="opcion"><input type="radio" id="gimnasioAgua1" name="gimnasio" value="Agua"><label for="gimnasioAgua1">Gimnasio de Agua 💧</label></div>
+      <div class="opcion"><input type="radio" id="gimnasioElectrico1" name="gimnasio" value="Electrico"><label for="gimnasioElectrico1">Gimnasio Eléctrico ⚡</label></div>
+    </div>
+    <div class="pokemon-imagen" id="img-gimnasio"></div>
+
+    <!-- Pregunta 4 -->
+    <h3>4. ¿Con qué compañero Pokémon viajarías?</h3>
+    <div class="campo">
+      <div class="opcion"><input type="radio" id="charizard1" name="compañero" value="Charizard"><label for="charizard1">Charizard 🔥</label></div>
+      <div class="opcion"><input type="radio" id="blastoise1" name="compañero" value="Blastoise"><label for="blastoise1">Blastoise 💧</label></div>
+      <div class="opcion"><input type="radio" id="venusaur1" name="compañero" value="Venusaur"><label for="venusaur1">Venusaur 🌿</label></div>
+      <div class="opcion"><input type="radio" id="pikachu2" name="compañero" value="Pikachu"><label for="pikachu2">Pikachu ⚡</label></div>
+    </div>
+    <div class="pokemon-imagen" id="img-compañero"></div>
+
+    <!-- Pregunta libre -->
+    <h3>5. ¿Cuál sería tu objetivo como entrenador Pokémon?</h3>
+    <div class="campo">
+      <textarea id="objetivo" name="objetivo" rows="3" placeholder="Escribe tu respuesta..." required></textarea>
+    </div>
+
+    <button type="submit" class="btn">Enviar mi Quiz</button>
+  </form>
+
+  <script>
+    // Mostrar imagen según starter
+    const starterImg = document.getElementById('img-starter');
+    document.querySelectorAll('input[name="starter"]').forEach(radio => {
+      radio.addEventListener('change', () => {
+        let src = '';
+        switch(radio.value){
+          case "Bulbasaur": src="https://i.gifer.com/WnES.gif"; break;
+          case "Charmander": src="https://i.gifer.com/4m3s.gif"; break;
+          case "Squirtle": src="https://i.gifer.com/ZDcp.gif"; break;
+          case "Pikachu": src="https://i.gifer.com/4bXB.gif"; break;
+        }
+        starterImg.innerHTML = `<img src="${src}" alt="${radio.value}">`;
+      });
+    });
+  </script>
+
+</body>
+</html>

@@ -1,0 +1,115 @@
+body {
+  margin: 0;
+  padding: 0;
+  font-family: 'Trebuchet MS', sans-serif;
+  background: url(https://i.gifer.com/Aq.gif) no-repeat center center fixed; 
+  background-size: cover;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+
+form {
+  width: 450px;
+  padding: 40px;
+  border-radius: 25px;
+  background: rgba(0,0,0,0.5); /* transparente para ver el GIF */
+  backdrop-filter: blur(6px);
+  color: #fff;
+  box-shadow: 0 0 40px rgba(0,0,0,0.7);
+}
+
+h1 {
+  text-align: center;
+  color: #ff1c1c;
+  font-size: 2.5em;
+  text-shadow: 2px 2px #ffde00;
+  margin-bottom: 25px;
+}
+
+h3 {
+  margin-top: 20px;
+  margin-bottom: 10px;
+  color: #3b4cca;
+  font-weight: bold;
+}
+
+.campo {
+  margin-bottom: 20px;
+}
+
+label {
+  font-weight: bold;
+  margin-bottom: 5px;
+  display: block;
+}
+
+input, textarea, select {
+  width: 100%;
+  padding: 12px;
+  border-radius: 12px;
+  border: 2px solid #3b4cca;
+  outline: none;
+  margin-bottom: 10px;
+  font-size: 1em;
+}
+
+input:focus, textarea:focus, select:focus {
+  border-color: #ffde00;
+  box-shadow: 0 0 12px #ffde00;
+}
+
+textarea { resize: none; }
+
+.opcion {
+  margin-bottom: 10px;
+}
+
+.opcion label {
+  margin-left: 10px;
+}
+
+/* Espacio para imagen */
+.pokemon-imagen {
+  display: flex;
+  justify-content: center;
+  margin: 10px 0 20px 0;
+}
+.pokemon-imagen img {
+  width: 120px;
+  height: 120px;
+}
+
+/* Botón Pokéball */
+.btn {
+  width: 100%;
+  padding: 15px;
+  border: none;
+  border-radius: 50px;
+  background: linear-gradient(180deg, #ff1c1c 50%, #ffffff 50%);
+  border: 4px solid black;
+  color: black;
+  font-weight: bold;
+  font-size: 1.2em;
+  cursor: pointer;
+  position: relative;
+  transition: transform 0.2s ease, box-shadow 0.3s ease;
+}
+.btn::after {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 24px;
+  height: 24px;
+  background: white;
+  border: 3px solid black;
+  border-radius: 50%;
+  transform: translate(-50%, -50%);
+  box-shadow: inset 0 0 6px rgba(0,0,0,0.4);
+}
+.btn:hover {
+  transform: scale(1.05);
+  box-shadow: 0 0 20px rgba(255,255,255,0.9);
+}
